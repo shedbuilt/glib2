@@ -1,6 +1,6 @@
 NAME=glib2
 VERSION=2.54.3
-REVISION=1
+REVISION=2
 LICENSE=LGPL-2.1-only
 SRC=http://ftp.gnome.org/pub/gnome/sources/glib/2.54/glib-2.54.3.tar.xz
 SRCMD5=16e886ad677bf07b7d48eb8188bcf759

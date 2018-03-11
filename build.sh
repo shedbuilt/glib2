@@ -3,6 +3,8 @@
 patch -Np1 -i "${SHED_PATCHDIR}/glib-2.54.3-skip_warnings-1.patch"
 # Apply BLFS meson patch
 patch -Np1 -i "${SHED_PATCHDIR}/glib-2.54.3-meson_fixes-1.patch"
+# Apply our aarch64 meson host compilation patch
+patch -Np1 -i "${SHED_PATCHDIR}/glib2-2.54.3_aarch64_meson_host.patch"
 mkdir build-glib && \
 cd build-glib && \
 meson --prefix=/usr \
