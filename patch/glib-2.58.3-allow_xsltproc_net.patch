@@ -1,32 +1,10 @@
---- a/docs/reference/gio/Makefile.am	2019-02-05 11:47:32.369305075 -1000
-+++ b/docs/reference/gio/Makefile.am	2019-02-05 11:47:52.935456882 -1000
-@@ -217,7 +217,6 @@
- 	$(NULL)
- 
- XSLTPROC_FLAGS = \
--        --nonet \
-         --stringparam man.output.quietly 1 \
-         --stringparam funcsynopsis.style ansi \
-         --stringparam man.th.extra1.suppress 1 \
-
---- a/docs/reference/glib/Makefile.am	2019-02-05 11:48:03.573534815 -1000
-+++ b/docs/reference/glib/Makefile.am	2019-02-05 11:48:18.877646249 -1000
-@@ -125,7 +125,6 @@
- 	gtester-report.1
- 
- XSLTPROC_FLAGS = \
--        --nonet \
-         --stringparam man.output.quietly 1 \
-         --stringparam funcsynopsis.style ansi \
-         --stringparam man.th.extra1.suppress 1 \
-
---- a/docs/reference/gobject/Makefile.am	2019-02-05 11:48:31.925740634 -1000
-+++ b/docs/reference/gobject/Makefile.am	2019-02-05 11:48:46.049842182 -1000
-@@ -80,7 +80,6 @@
- 
- 
- XSLTPROC_FLAGS = \
--        --nonet \
-         --stringparam man.output.quietly 1 \
-         --stringparam funcsynopsis.style ansi \
-         --stringparam man.th.extra1.suppress 1 \
+--- a/meson.build	2019-02-05 12:23:01.121227415 -1000
++++ b/meson.build	2019-02-05 12:23:38.547681166 -1000
+@@ -2013,7 +2013,6 @@
+   xsltproc = find_program('xsltproc', required : true)
+   xsltproc_command = [
+     xsltproc,
+-    '--nonet',
+     '--stringparam', 'man.output.quietly', '1',
+     '--stringparam', 'funcsynopsis.style', 'ansi',
+     '--stringparam', 'man.th.extra1.suppress', '1',
