@@ -3,6 +3,8 @@ declare -A SHED_PKG_LOCAL_OPTIONS=${SHED_PKG_OPTIONS_ASSOC}
 # Patch
 # Apply BLFS log level patch
 patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.1-skip_warnings-1.patch" &&
+# Apply our xsltproc network access patch
+patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.3-allow_xsltproc_net.patch" &&
 
 # Build and Install
 mkdir build-glib &&
