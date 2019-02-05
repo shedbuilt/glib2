@@ -1,9 +1,9 @@
 NAME=glib2
-VERSION=2.58.1
-REVISION=2
+VERSION=2.58.3
+REVISION=3
 LICENSE=LGPL-2.1-only
-SRC=http://ftp.gnome.org/pub/gnome/sources/glib/2.58/glib-2.58.1.tar.xz
-SRCMD5=4fd2ead128a408c89b9153dfdb99f9a5
+SRC=http://ftp.gnome.org/pub/gnome/sources/glib/2.58/glib-2.58.3.tar.xz
+SRCMD5=8058c7bde846dcffe5fa453eca366d73
 BUILDDEPS=meson ninja libxslt pcre
 INSTALLDEPS=libxslt pcre
 RUNDEPS=gobject-introspection
