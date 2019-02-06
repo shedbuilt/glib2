@@ -18,6 +18,6 @@ DESTDIR="$SHED_FAKE_ROOT" ninja install || exit 1
 
 # Install Documentation
 if [ -n "${SHED_PKG_LOCAL_OPTIONS[docs]}" ]; then
-    mkdir -pv "${SHED_FAKE_ROOT}${SHED_PKG_LOCAL_DOCDIR}" &&
-    cp -r ../docs/reference/{NEWS,gio,glib,gobject} "${SHED_FAKE_ROOT}${SHED_PKG_LOCAL_DOCDIR}"
+    mkdir -pv "${SHED_FAKE_ROOT}${SHED_PKG_DOCS_INSTALL_DIR}" &&
+    cp -r ../docs/reference/{NEWS,gio,glib,gobject} "${SHED_FAKE_ROOT}${SHED_PKG_DOCS_INSTALL_DIR}"
 fi
