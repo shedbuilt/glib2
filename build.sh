@@ -7,8 +7,8 @@ patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.1-skip_warnings-1.patch" &&
 patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.3-allow_xsltproc_net.patch" &&
 
 # Build and Install
-mkdir build-glib &&
-cd build-glib &&
+mkdir build &&
+cd build &&
 meson --prefix=/usr   \
       -Dman=true      \
       -Dselinux=false \
