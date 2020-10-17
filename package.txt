@@ -8,4 +8,4 @@ BUILDDEPS=meson ninja libxslt pcre docs:docbook-xsl
 INSTALLDEPS=libxslt pcre
 RUNDEPS=gobject-introspection
 OPTIONS=(docs)
-DEFAULTS=
+DEFAULTS=docs
