@@ -9,9 +9,9 @@ patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.3-allow_xsltproc_net.patch" &&
 # Build and Install
 mkdir build &&
 cd build &&
-meson --prefix=/usr   \
-      -Dman=true      \
-      -Dselinux=false \
+meson --prefix=/usr      \
+      -Dman=true         \
+      -Dselinux=disabled \
       ..              &&
 NINJAJOBS=$SHED_NUM_JOBS ninja &&
 DESTDIR="$SHED_FAKE_ROOT" ninja install || exit 1
