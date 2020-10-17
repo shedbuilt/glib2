@@ -1,18 +1,22 @@
 #!/bin/bash
 declare -A SHED_PKG_LOCAL_OPTIONS=${SHED_PKG_OPTIONS_ASSOC}
+
+# Set man option, which requires docbook-xsl
+SHED_PKG_LOCAL_MAN_OPTION='false'
+if [ -n "${SHED_PKG_LOCAL_OPTIONS[docs]}" ]; then
+    SHED_PKG_LOCAL_MAN_OPTION='true'
+fi
 # Patch
 # Apply BLFS log level patch
 patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.1-skip_warnings-1.patch" &&
-# Apply our xsltproc network access patch
-patch -Np1 -i "${SHED_PKG_PATCH_DIR}/glib-2.58.3-allow_xsltproc_net.patch" &&
 
 # Build and Install
 mkdir build-glib &&
 cd build-glib &&
-meson --prefix=/usr   \
-      -Dman=true      \
+meson --prefix=/usr \
+      -Dman=$SHED_PKG_LOCAL_MAN_OPTION \
       -Dselinux=false \
-      ..              &&
+      .. &&
 NINJAJOBS=$SHED_NUM_JOBS ninja &&
 DESTDIR="$SHED_FAKE_ROOT" ninja install || exit 1
 
